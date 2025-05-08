@@ -4,7 +4,7 @@ const router = require("./router/subscribers");
 const app = express();
 
 clientPath = path.join(__dirname, "..", "client");
-app.set("view", val);
+
 app.use(express.static(path.join(clientPath)));
 app.use("/", router);
 app.listen(3000, () => {

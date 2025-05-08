@@ -38,7 +38,8 @@ window.onload = async (event) => {
 };
 
 document.getElementById("item-description").onsubmit = async (e) => {
-  let data = new FormData(document.getElementById("item-description"));
+  e.preventDefault();
+  let data = new FormData(e.target);
   var jsonData = {};
   data.forEach((value, key) => (jsonData[key] = value));
   const response = await fetch("http://localhost:3000/createItem", {
