@@ -1,0 +1,85 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+body {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+div[name="items-view"] {
+    width: 90%;
+    max-width: 800px;
+    min-width: 400px;
+
+    background-color: white;
+    border-radius: 10px;
+    box-shadow:
+        0px 4px 8px 0 rgba(0, 0, 0, 0.2),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    align-items: center;
+
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin: 20px;
+    gap: 15px;
+}
+
+form[name="popupForm"] {
+    width: 20%;
+}
+
+form {
+    width: 80%;
+    max-width: 800px;
+    min-width: 400px;
+
+    background-color: white;
+    border-radius: 10px;
+    box-shadow:
+        0px 4px 8px 0 rgba(0, 0, 0, 0.2),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    align-items: center;
+
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin: 20px;
+    gap: 15px;
+}
+
+input[name="submit-button"] {
+    background-color: #e7f2e4;
+    border-radius: 5px;
+    color: black;
+}
+
+input {
+    padding: 10px;
+    width: 80%;
+    height: 80%;
+}
+
+.cardItem {
+    max-width: 800px;
+    min-width: 400px;
+    width: 80%;
+
+    background-color: white;
+    border-radius: 10px;
+    box-shadow:
+        0px 4px 8px 0 rgba(0, 0, 0, 0.2),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+    padding: 20px;
+    margin: 20px;
+}

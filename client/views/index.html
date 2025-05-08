@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+    <head>
+        <link rel="stylesheet" href="styles/stylesheet.css" />
+    </head>
+    <body>
+        <div name="item-form">
+            <form id="item-description">
+                <img src="assets/tea-cup.png" width="150" height="150" />
+                <input
+                    type="text"
+                    name="productName"
+                    placeholder="Product Name"
+                    required
+                />
+
+                <input
+                    type="number"
+                    name="quantity"
+                    placeholder="Quantity"
+                    min="1"
+                    required
+                />
+
+                <input
+                    type="text"
+                    name="category"
+                    placeholder="Category (e.g., Electronics, Food)"
+                />
+
+                <input
+                    type="date"
+                    name="stockDate"
+                    placeholder="Date of Stocking"
+                />
+                <input
+                    type="number"
+                    name="price"
+                    placeholder="Unit Price"
+                    step="0.01"
+                    min="0"
+                />
+
+                <input name="submit-button" type="submit" value="Sumbit" />
+            </form>
+        </div>
+        <div name="items-view" style="overflow: auto"></div>
+    </body>
+    <script src="scripts/app.js"></script>
+</html>
