@@ -47,8 +47,12 @@ router.get("/loadItem", async (req, res) => {
   res.status(200).send(JSON.stringify(jsonList));
 });
 
-router.get("/itemDetail/:id", async (req, res) => {
+router.get("/itemDetail/", async (req, res) => {
   res.render("cardSetting");
+});
+
+router.get("/Create", async (req, res) => {
+  res.render("createItem");
 });
 
 router.get("/", async (req, res) => {

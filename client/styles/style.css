@@ -1,0 +1,56 @@
+html,
+body {
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+
+    grid-template-columns: 5% auto;
+    grid-template-rows: 38% 10% 48%; /* Slightly reduced to avoid overflow */
+
+    background: #f1f1f1;
+}
+
+div[name="mainContent"] {
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+    background: #fefefe;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+    padding: 10px;
+    margin: 0 10px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    padding-left: 20px;
+    gap: 10px;
+}
+
+div[name="sidebar"] {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    grid-row: 1 / 4;
+
+    background: #fefefe;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    margin-right: 0;
+}
+
+svg {
+    height: 32px;
+    width: 32px;
+}
