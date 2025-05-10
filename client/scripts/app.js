@@ -4,41 +4,46 @@ window.onload = async (event) => {
     headers: { "Content-Type": "application/json" },
   });
 
-  const itemsView = document.getElementsByName("items-view")[0];
+  const itemsView = document.getElementsByName("mainContent")[0];
   const jsonBody = await response.json();
 
+  // the most ugly thing I ever saw
   for await (const item of jsonBody) {
     const div = document.createElement("div");
-    div.classList.add("cardItem");
-    div.addEventListener("click", () => itemDetail(item._id));
+    div.classList.add("container");
 
-    const h1 = document.createElement("h1");
-    h1.innerHTML = item.productName;
+    const pId = document.createElement("p");
+    pId.innerHTML = item._id;
 
-    const h2 = document.createElement("h2");
-    h2.innerHTML = `Category: ${item.category}`;
+    const pProduct = document.createElement("p");
+    pProduct.innerHTML = item.productName;
 
-    const p1 = document.createElement("p");
-    p1.innerHTML = `Quantity: ${item.quantity}`;
+    const pQuantity = document.createElement("p");
+    pQuantity.innerHTML = `Quantity: ${item.quantity}`;
 
-    const p2 = document.createElement("p");
-    p2.innerHTML = `Stock Date: ${item.stockDate}`;
+    const pCategory = document.createElement("p");
+    pCategory.innerHTML = `Category: ${item.category}`;
 
-    const p3 = document.createElement("p");
-    p3.innerHTML = `Price: $${item.price}`;
+    const pDate = document.createElement("p");
+    pDate.innerHTML = `Stock Date: ${item.stockDate}`;
 
-    div.appendChild(h1);
-    div.appendChild(h2);
-    div.appendChild(p1);
-    div.appendChild(p2);
-    div.appendChild(p3);
+    const pPrice = document.createElement("p");
+    pPrice.innerHTML = `Price: $${item.price}`;
+
+    div.appendChild(pId);
+    div.appendChild(pProduct);
+    div.appendChild(pQuantity);
+    div.appendChild(pCategory);
+    div.appendChild(pDate);
+    div.appendChild(pPrice);
 
     itemsView.appendChild(div);
   }
 };
 
 document.getElementById("item-description").onsubmit = async (e) => {
-  let data = new FormData(document.getElementById("item-description"));
+  e.preventDefault();
+  let data = new FormData(e.target);
   var jsonData = {};
   data.forEach((value, key) => (jsonData[key] = value));
   const response = await fetch("http://localhost:3000/createItem", {

@@ -22,6 +22,9 @@ const collection = database.collection("Storage-Collection");
 
 clientPath = path.join(__dirname, "..", "..", "client");
 
+router.set("views", path.join(clientPath, "views"));
+router.set("view engine", "pug");
+
 router.post("/createItem", async (req, res) => {
   results = await collection.insertOne(req.body);
   if (!results) {
@@ -44,12 +47,16 @@ router.get("/loadItem", async (req, res) => {
   res.status(200).send(JSON.stringify(jsonList));
 });
 
-router.get("/itemDetail/:id", async (req, res) => {
-  res.sendFile(path.join(clientPath, "views", "cardSetting.html"));
+router.get("/itemDetail/", async (req, res) => {
+  res.render("cardSetting");
+});
+
+router.get("/Create", async (req, res) => {
+  res.render("createItem");
 });
 
 router.get("/", async (req, res) => {
-  res.sendFile(path.join(clientPath, "views", "index.html"));
+  res.render("index");
 });
 
 module.exports = router;
